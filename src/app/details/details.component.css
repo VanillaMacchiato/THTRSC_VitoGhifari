@@ -1,0 +1,32 @@
+.details-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+mat-card {
+    margin: 3%;
+}
+
+mat-card-title {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.column {
+    flex: 50%;
+}
+
+.title {
+    margin-bottom: 0;
+    font-size: 1.25em;
+}
+
+p {
+    font-size:  1.2em;
+    text-align: justify;
+}

@@ -1,0 +1,46 @@
+<div class="details-card">
+    <mat-card>
+        <mat-card-title> 
+            Informasi Singkat {{ user.namaDepan }} (ID: {{ user.id }})
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <br>
+
+        <!-- Membuat dua kolom -->
+        <div class="row">
+            <div class="column">
+                <h2 class="title">Nama Depan</h2>
+                <p>{{ user.namaDepan }}</p>
+            </div>
+            <div class="column">
+                <h2 class="title">Nama Belakang</h2>
+                <p>{{ user.namaBelakang }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h2 class="title">Umur</h2>
+                <p>{{ user.umur }}</p>
+            </div>
+            <div class="column">
+                <h2 class="title">Jenis Kelamin</h2>
+                <p>{{ user.gender }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <!-- Jika pengguna aktif (user.penggunaAktif: true), akan ditampilkan 'Ya'. Jika tidak: 'Bukan' -->
+                <h2 class="title">Pengguna Aktif?</h2>
+                <p *ngIf="user.penggunaAktif; else elseBlock">Ya</p>
+                <ng-template #elseBlock><p>Bukan</p></ng-template>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h2 class="title">Biodata</h2>
+                <p>{{ user.biodata }}</p>
+            </div>
+        </div>
+    </mat-card>
+</div>

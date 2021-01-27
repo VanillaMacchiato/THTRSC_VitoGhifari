@@ -1,0 +1,33 @@
+<div class="main-card">
+    <mat-card>
+        <!-- Judul -->
+        <mat-card-title>List {{ userData.length }} Pengguna Media Sosial ABC</mat-card-title>
+
+        <mat-divider></mat-divider>
+        
+        <mat-card-content>
+        <table mat-table [dataSource]="userData">
+            <ng-container matColumnDef="namaLengkap">
+                <th mat-header-cell *matHeaderCellDef> Nama Lengkap </th>
+                <td mat-cell *matCellDef="let user" [routerLink]="['/user', user.id]" class="clickable"> {{ user.namaDepan }} {{ user.namaBelakang }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="penggunaAktif">
+                <th mat-header-cell *matHeaderCellDef> Pengguna Aktif? </th>
+                <td mat-cell *matCellDef="let user">
+                    <div *ngIf="user.penggunaAktif; else elseBlock">
+                        <mat-icon style="color:green; font-size:32px">done</mat-icon>
+                    </div>
+                    <ng-template #elseBlock>
+                        <mat-icon style="color:red; font-size:32px">close</mat-icon>
+                    </ng-template>
+                </td>
+            </ng-container>
+                <!-- Menampilkan kolom 'Nama Lengkap' dan 'Pengguna Aktif' -->
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr mat-row *matRowDef="let RowData; columns: columnsToDisplay"></tr>
+
+        </table>
+        </mat-card-content>
+    </mat-card>
+</div>

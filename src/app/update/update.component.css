@@ -1,0 +1,34 @@
+.main-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+mat-card {
+    margin: 3%;
+}
+
+mat-card-title {
+    text-align: center;
+    padding: 10px;
+}
+
+table {
+    margin: auto;
+    width: 100%;
+}
+
+th {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.mat-column-penggunaAktif {
+    flex: none;
+    width: 100px;
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+    outline: none;
+}

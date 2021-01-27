@@ -1,0 +1,53 @@
+<div class="details-card">
+    <mat-card>
+        <mat-card-title> 
+            Ubah Data {{ user.namaDepan }} (ID: {{ user.id }})
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <br>
+        <form [formGroup]="form">
+            <br>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Nama Depan" formControlName="namaDepan">
+                    <mat-error *ngIf="namaDepan.invalid && namaDepan.touched">
+                        Nama depan harus diisi dengan benar!
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Nama Belakang" formControlName="namaBelakang">
+                    <mat-error *ngIf="namaBelakang.invalid && namaBelakang.touched">
+                        Nama belakang harus diisi dengan benar!
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Jenis Kelamin</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option *ngFor="let gender of genders" [value]="gender.name">
+                            {{ gender.name }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Umur" formControlName="umur">
+                    <mat-error *ngIf="umur.invalid && umur.touched">
+                        Umur harus di antara 18-65 tahun!
+                    </mat-error>
+                </mat-form-field>
+                
+                <div>
+                    <mat-checkbox class="checkAktif" formControlName="penggunaAktif" color="primary" labelPosition="before">Pengguna Aktif?</mat-checkbox>
+                </div>
+
+            </div>
+
+            <mat-form-field class="bio">
+                <textarea matInput placeholder="Biodata" formControlName="biodata"></textarea>
+            </mat-form-field>
+        </form>
+        <app-submit-update [formIsPristine]="form.pristine || form.invalid" class="submit-update-button" (updateForm)="updateUser()"></app-submit-update>
+    </mat-card>
+</div>

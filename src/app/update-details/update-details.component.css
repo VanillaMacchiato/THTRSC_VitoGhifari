@@ -1,0 +1,35 @@
+.details-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+mat-card {
+    margin: 3% 3% 10% 3%;
+}
+
+mat-card-title {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+div > mat-form-field {
+    display: inline-flex;
+    margin: 0 30px 15px 30px;
+}
+
+.checkAktif {
+    margin: 15px 15px 15px 25px;
+}
+
+.bio {
+    margin: 25px 25px 15px 25px;
+    width: 80%;
+}
+
+.submit-button {
+    margin-left: 70%;
+}
+
+.submit-update-button {
+    margin-left: 50%;
+}

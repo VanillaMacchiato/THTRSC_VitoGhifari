@@ -1,0 +1,13 @@
+.details-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+mat-card {
+    margin: 3%;
+}
+
+mat-card-title {
+    text-align: center;
+    padding-bottom: 10px;
+}
